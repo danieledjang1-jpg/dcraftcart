@@ -1,0 +1,2 @@
+const required=['firstName','lastName','email','phone','address','city','state','country'];
+export function validateShipping(values){const errors={};required.forEach(k=>{if(!values[k]?.trim())errors[k]='This field is required.'});if(values.email&&!/^\S+@\S+\.\S+$/.test(values.email))errors.email='Please enter a valid email address.';if(values.phone&&!/^[+\d][\d\s()-]{6,}$/.test(values.phone))errors.phone='Please enter a valid phone number.';return errors}
